@@ -1,4 +1,12 @@
-﻿Console.WriteLine("Введите строк: ");
+﻿void PrintMatrix(char[,] chars){
+    string result = "";
+foreach (char element in chars){
+    result += element;
+}
+Console.WriteLine(result);
+}
+
+Console.WriteLine("Введите строк: ");
 int n = int.Parse(Console.ReadLine()!);
 Console.WriteLine("Введите столбов: ");
 int m = int.Parse(Console.ReadLine()!);
@@ -7,16 +15,13 @@ for (int i = 0; i < chars.GetLength(0); i++){
     for (int j = 0; j < chars.GetLength(1); j++){
     Console.Write("Введите элемент массива: ");
     chars[i, j] = char.Parse(Console.ReadLine()!);
+        }
 }
-}
+PrintMatrix(chars);
 
-Console.WriteLine($"Начальный массив: [{string.Join(", ", chars)}]");
-Console.WriteLine(string.Join("", chars));
-string result = "";
-foreach (char element in chars){
-    result += element;
-}
-Console.WriteLine(result);
+// Console.WriteLine($"Начальный массив: [{string.Join(", ", chars)}]");
+// Console.WriteLine(string.Join("", chars));
+
 
 // Console.Clear();
 // Console.Write("Кол-во элементов массива: ");
